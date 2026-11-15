@@ -1,0 +1,140 @@
+/*
+ * "Stage" layout shared by the runner and viewer screens: a full-screen map
+ * with glass cards floating over it. Bottom sheet on phones, side panel on
+ * wide screens.
+ */
+.de-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  --de-map-attrib-offset: 72px; /* attribution sits below the top bar */
+}
+
+.de-topbar {
+  position: absolute;
+  top: calc(env(safe-area-inset-top) + var(--de-space-3));
+  left: calc(env(safe-area-inset-left) + var(--de-space-3));
+  right: calc(env(safe-area-inset-right) + var(--de-space-3));
+  z-index: 6;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--de-space-2);
+  pointer-events: none; /* let the map through between the chips */
+}
+.de-topbar > * {
+  pointer-events: auto;
+}
+
+.de-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--de-space-3);
+  min-height: var(--de-tap);
+  max-width: 100%;
+  padding: var(--de-space-2) var(--de-space-3) var(--de-space-2) var(--de-space-2);
+  border-radius: var(--de-radius-pill);
+  min-width: 0;
+}
+.de-chip__name {
+  overflow: hidden;
+  font-family: var(--de-font-display);
+  font-size: var(--de-text-md);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.de-sheet {
+  position: absolute;
+  left: calc(env(safe-area-inset-left) + var(--de-space-3));
+  right: calc(env(safe-area-inset-right) + var(--de-space-3));
+  bottom: calc(env(safe-area-inset-bottom) + var(--de-space-3));
+  z-index: 5;
+  display: grid;
+  gap: var(--de-space-3);
+  max-height: 62dvh;
+  padding: var(--de-space-4) var(--de-space-4) var(--de-space-3);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  animation: de-sheet-in 500ms var(--de-ease);
+}
+.de-sheet__footer {
+  display: grid;
+  gap: var(--de-space-3);
+  font-size: var(--de-text-sm);
+  color: var(--de-text-muted);
+}
+.de-sheet__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--de-space-2);
+  font-variant-numeric: tabular-nums;
+}
+.de-sheet__actions {
+  display: grid;
+  gap: var(--de-space-2);
+}
+.de-sheet__actions--row {
+  grid-template-columns: 1fr 1fr;
+}
+.de-sheet__title {
+  font-size: var(--de-text-md);
+  font-weight: 800;
+}
+
+@keyframes de-sheet-in {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+}
+
+/* Wide screens: the sheet becomes a panel on the left. */
+@media (min-width: 900px) {
+  .de-topbar {
+    top: var(--de-space-5);
+    left: var(--de-space-5);
+    right: var(--de-space-5);
+  }
+  .de-sheet {
+    top: calc(var(--de-space-5) + var(--de-tap) + var(--de-space-4));
+    bottom: auto;
+    left: var(--de-space-5);
+    right: auto;
+    width: 440px;
+    max-height: calc(100dvh - var(--de-tap) - 3 * var(--de-space-5));
+    gap: var(--de-space-4);
+    padding: var(--de-space-6);
+  }
+}
+
+/* ---- Full-page messages (loading, dead link) ---------------------------- */
+.de-message {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--de-space-5);
+  background:
+    radial-gradient(120% 80% at 80% 0%, var(--de-night-700) 0%, transparent 60%), var(--de-bg);
+}
+:root[data-theme="light"] .de-message {
+  background: var(--de-bg);
+}
+.de-message__card {
+  display: grid;
+  gap: var(--de-space-4);
+  justify-items: start;
+  max-width: 460px;
+  padding: var(--de-space-6);
+}
+.de-message__card h1 {
+  font-size: var(--de-text-2xl);
+}
+.de-message__card p {
+  color: var(--de-text-muted);
+}

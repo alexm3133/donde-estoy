@@ -1,0 +1,161 @@
+{
+  "status": {
+    "waiting": "Waiting",
+    "moving": "Moving",
+    "stopped": "Stopped",
+    "no_signal": "No signal",
+    "finished": "Arrived",
+    "ended": "Ended"
+  },
+  "hero": {
+    "other": {
+      "arrivesIn": "{{name}} arrives in",
+      "waiting": "Waiting for {{name}}",
+      "waitingDetail": "They haven't set off yet. This page updates by itself — no need to touch anything.",
+      "stoppedDetail": "Stopped for {{minutes}} min. Setting off now, they'd arrive around {{time}}.",
+      "arrived": "{{name}} has arrived!",
+      "ended": "{{name}} stopped sharing"
+    },
+    "own": {
+      "arrivesIn": "You arrive in",
+      "waiting": "Finding your position…",
+      "waitingDetail": "Step out under open sky so the GPS can find you.",
+      "stoppedDetail": "Stopped for {{minutes}} min. Setting off now, you'd arrive around {{time}}.",
+      "arrived": "You've arrived!",
+      "ended": "You stopped sharing"
+    },
+    "around": "around {{time}}",
+    "noSignalDetail": "No signal from their phone (last position {{ago}}). Time based on the last we know.",
+    "imminent": "Arriving",
+    "spokenMinutes": "{{minutes}} minutes",
+    "spokenHours": "{{hours}} h {{minutes}} min",
+    "lowConfidence": "First estimate — it sharpens as they go.",
+    "arrivedAt": "Arrived at {{time}}.",
+    "endedDetail": "Their location is no longer stored or shown."
+  },
+  "stats": {
+    "distanceLeft": "To go",
+    "distanceLeftApprox": "To go (approx.)",
+    "ascentLeft": "Climb",
+    "descentLeft": "Descent"
+  },
+  "profile": {
+    "label": "Elevation profile of the route"
+  },
+  "map": {
+    "label": "Topographic map with the live position",
+    "recenter": "Re-centre the map",
+    "pickerLabel": "Map to choose the destination"
+  },
+  "alerts": {
+    "arrivingSoon": {
+      "title": "{{name}} is almost there",
+      "body": "Arriving in about {{minutes}} min, around {{time}}."
+    },
+    "arrived": {
+      "title": "{{name}} has arrived!",
+      "body": "Reached the destination at {{time}}."
+    },
+    "stalledStopped": {
+      "title": "{{name}} hasn't moved for {{minutes}} min",
+      "body": "Their last position is on the map. It may just be a long break — try calling them."
+    },
+    "stalledNoSignal": {
+      "title": "No news from {{name}} for {{minutes}} min",
+      "body": "Their phone isn't sending its position. In the mountains that's usually no coverage. The last known position is on the map."
+    }
+  },
+  "viewer": {
+    "loading": "Loading…",
+    "lastUpdate": "Last position: {{ago}}",
+    "reconnecting": "Reconnecting…",
+    "offRoute": "They're off the planned route; the arrival time may change.",
+    "notFoundTitle": "This link no longer works",
+    "notFoundBody": "It may have expired or been copied wrong. Ask whoever sent it to share a new one.",
+    "errorTitle": "Can't connect",
+    "errorBody": "Check your connection. We keep trying…",
+    "goHome": "Share my own route",
+    "notifyEnable": "Alert me",
+    "notifyOn": "Alerts on"
+  },
+  "home": {
+    "title": "Let them know when you'll arrive.",
+    "subtitle": "Share your mountain outing with a link. Whoever is waiting sees where you are and an arrival time that accounts for the climbing, not just the distance.",
+    "name": "Your name",
+    "namePlaceholder": "As they'll see you: Alex",
+    "activity": "Activity",
+    "run": "Running",
+    "hike": "Hiking",
+    "destination": "Where are you going?",
+    "destGpx": "GPX route",
+    "destPoint": "Point on map",
+    "gpxChoose": "Choose a GPX file",
+    "gpxChange": "Change route",
+    "gpxHint": "With a GPX route the arrival time is far more accurate: we know how much climb and descent is left.",
+    "gpxParsing": "Reading the route…",
+    "routeSummary": "{{distance}} · {{ascent}} up · {{descent}} down",
+    "routeNoElevation": "{{distance}} · this GPX has no altitudes, so the time will be less accurate",
+    "pointHint": "Tap the map to mark your destination.",
+    "pointSet": "Destination set. Tap elsewhere to change it.",
+    "locateMe": "Centre on my position",
+    "stall": "Safety alert",
+    "stallValue": "Alert my followers if I haven't moved for {{minutes}} min",
+    "start": "Start sharing",
+    "starting": "Creating link…",
+    "demo": "See a demo",
+    "demoHint": "Simulates a descent from Pedraforca to Gósol so you can try it from your sofa.",
+    "privacy": "No accounts. A secret link that expires by itself. Stop sharing whenever you want and your location is erased.",
+    "openSource": "Open source (MIT)",
+    "errors": {
+      "nameRequired": "Enter your name.",
+      "destinationRequired": "Choose a GPX route or mark a destination on the map.",
+      "gpx_invalid": "That file doesn't look like a valid GPX.",
+      "gpx_no_points": "The GPX contains no route.",
+      "gpx_too_large": "The file is too large (5 MB maximum).",
+      "route_too_short": "The route is too short.",
+      "too_many_sessions": "You've created too many sessions. Wait a while.",
+      "location": "We couldn't get your position.",
+      "generic": "Something went wrong. Check your connection and try again."
+    }
+  },
+  "run": {
+    "live": "Sharing live",
+    "shareTitle": "Send this link to whoever is waiting",
+    "shareWhatsapp": "Send via WhatsApp",
+    "share": "Share",
+    "copy": "Copy link",
+    "copied": "Link copied",
+    "shareText": "Follow my route live and see when I'll arrive:",
+    "screenTitle": "Keep the screen on",
+    "screenBody": "Leave this page open and visible. If you lock the phone or switch apps, the browser stops sending your position.",
+    "screenLocked": "We keep the screen on for you while this page is open.",
+    "screenUnsupported": "This browser can't keep the screen on: turn off auto-lock in your phone settings.",
+    "bufferTitle": "No coverage",
+    "bufferBody": "{{count}} positions saved on the phone. They'll be sent automatically when signal returns.",
+    "gpsStarting": "Looking for GPS signal…",
+    "gpsOk": "GPS active",
+    "gpsDeniedTitle": "Location permission denied",
+    "gpsDeniedBody": "Allow location access for this page in your browser settings and reload.",
+    "gpsUnavailableTitle": "Can't find a GPS signal",
+    "gpsUnavailableBody": "Step out under open sky. We keep trying.",
+    "gpsUnsupportedTitle": "This browser has no GPS",
+    "gpsUnsupportedBody": "Open the page on a phone with location services.",
+    "demoNotice": "Demo mode: the position is simulated and sped up.",
+    "finish": "I've arrived",
+    "stop": "Stop sharing",
+    "stopConfirmTitle": "Stop sharing?",
+    "stopConfirmBody": "The link will stop showing your position and we'll erase your location right now.",
+    "stopConfirmYes": "Stop sharing",
+    "cancel": "Cancel",
+    "finishedBody": "The link will keep showing that you arrived for one hour, then everything is deleted.",
+    "newSession": "New outing",
+    "sessionGone": "The session has expired."
+  },
+  "settings": {
+    "open": "Language and appearance",
+    "language": "Language",
+    "theme": "Appearance",
+    "dark": "Dark",
+    "light": "Light"
+  }
+}

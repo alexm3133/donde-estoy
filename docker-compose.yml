@@ -1,0 +1,45 @@
+# Full stack: PostgreSQL + API + web app (nginx).
+#   cp .env.example .env && docker compose up --build
+# then open http://localhost:8080
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-donde}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change-me}
+      POSTGRES_DB: ${POSTGRES_DB:-donde_estoy}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    build: ./backend
+    environment:
+      DE_DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-donde}:${POSTGRES_PASSWORD:-change-me}@db:5432/${POSTGRES_DB:-donde_estoy}
+      DE_PUBLIC_URL: ${DE_PUBLIC_URL:-http://localhost:8080}
+      DE_CORS_ORIGINS: ${DE_CORS_ORIGINS:-http://localhost:8080}
+      DE_DEFAULT_SESSION_HOURS: ${DE_DEFAULT_SESSION_HOURS:-8}
+      DE_MAX_SESSION_HOURS: ${DE_MAX_SESSION_HOURS:-24}
+      DE_FINISHED_GRACE_MINUTES: ${DE_FINISHED_GRACE_MINUTES:-60}
+      DE_CREATE_RATE_LIMIT_PER_HOUR: ${DE_CREATE_RATE_LIMIT_PER_HOUR:-30}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_TILE_URL: ${VITE_TILE_URL:-https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png}
+        VITE_TILE_MAX_ZOOM: ${VITE_TILE_MAX_ZOOM:-17}
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  db-data:

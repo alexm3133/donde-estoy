@@ -1,0 +1,19 @@
+.de-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--de-space-3);
+  font-family: var(--de-font-display);
+  font-size: var(--de-text-lg);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--de-text);
+}
+.de-brand svg {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px var(--de-glass-border);
+}
+.de-brand--compact .de-brand__name {
+  display: none;
+}

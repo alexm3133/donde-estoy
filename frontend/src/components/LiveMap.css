@@ -1,0 +1,101 @@
+.de-map {
+  position: absolute;
+  inset: 0;
+  background: var(--de-bg);
+}
+.de-map__canvas {
+  position: absolute;
+  inset: 0;
+}
+.de-map--pick .maplibregl-canvas {
+  cursor: crosshair;
+}
+.de-map__recenter {
+  position: absolute;
+  z-index: 3;
+  transition: bottom var(--de-duration) var(--de-ease);
+}
+
+/* Attribution: always present (tile licence), themed to match the cards. */
+.de-map .maplibregl-ctrl-attrib {
+  background: var(--de-glass);
+  color: var(--de-text-muted);
+  font: 500 11px/1.4 var(--de-font-body);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.de-map .maplibregl-ctrl-attrib a {
+  color: var(--de-text);
+}
+.de-map .maplibregl-ctrl-attrib-button {
+  background-color: rgb(255 255 255 / 0.75);
+  border-radius: 50%;
+}
+.de-map .maplibregl-ctrl-top-right {
+  top: calc(env(safe-area-inset-top) + var(--de-map-attrib-offset, 0px));
+}
+
+/* ---- Runner marker: a dot with a sonar pulse ---------------------------- */
+.de-runner {
+  --tone: var(--de-accent);
+  position: relative;
+  width: 26px;
+  height: 26px;
+}
+/* Fixed palette values: the marker sits on the map, not on a themed surface. */
+.de-runner[data-tone="stopped"] {
+  --tone: #ffc24d;
+}
+.de-runner[data-tone="lost"] {
+  --tone: var(--de-stone-400);
+}
+.de-runner[data-tone="done"] {
+  --tone: var(--de-trail-400);
+}
+.de-runner__dot {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--tone);
+  border: 4px solid #fff;
+  box-shadow: var(--de-shadow-marker);
+  transition: background var(--de-duration) var(--de-ease);
+}
+.de-runner__pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--tone);
+  opacity: 0;
+  animation: de-pulse 2.2s var(--de-ease) infinite;
+}
+/* Only a moving runner pulses; a still dot reads as "not moving". */
+.de-runner[data-tone="stopped"] .de-runner__pulse,
+.de-runner[data-tone="lost"] .de-runner__pulse,
+.de-runner[data-tone="done"] .de-runner__pulse {
+  animation: none;
+}
+@keyframes de-pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+
+/* ---- Destination flag ----------------------------------------------------- */
+.de-flag {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding-left: 3px;
+  border-radius: 50% 50% 50% 6px;
+  background: var(--de-night-900);
+  border: 3px solid #fff;
+  color: var(--de-sunset-500);
+  box-shadow: var(--de-shadow-marker);
+}

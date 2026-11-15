@@ -1,0 +1,316 @@
+/*
+ * Base styles: resets, Ionic variable mapping, typography and shared
+ * building blocks (buttons, glass cards, form fields). Values come from
+ * tokens.css — no raw colours or sizes here.
+ */
+
+/* ---- Map our tokens onto Ionic's variables ---------------------------- */
+:root {
+  --ion-background-color: var(--de-bg);
+  --ion-text-color: var(--de-text);
+  --ion-font-family: var(--de-font-body);
+  --ion-color-primary: var(--de-accent);
+  --ion-color-primary-contrast: var(--de-on-accent);
+  --ion-color-primary-shade: var(--de-sunset-700);
+  --ion-color-primary-tint: var(--de-sunset-400);
+  --ion-overlay-background-color: var(--de-surface);
+  --ion-toast-background: var(--de-surface-raised);
+  --ion-toast-color: var(--de-text);
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--de-bg);
+  color: var(--de-text);
+  font-family: var(--de-font-body);
+  font-size: var(--de-text-md);
+  line-height: var(--de-leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--de-font-display);
+  line-height: var(--de-leading-tight);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+a {
+  color: var(--de-accent-text);
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--de-focus-ring);
+}
+
+.de-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.de-muted {
+  color: var(--de-text-muted);
+}
+
+/* ---- Glass card ------------------------------------------------------- */
+.de-glass {
+  background: var(--de-glass);
+  border: 1px solid var(--de-glass-border);
+  border-radius: var(--de-radius-lg);
+  box-shadow: var(--de-shadow-card);
+  -webkit-backdrop-filter: blur(var(--de-glass-blur)) saturate(150%);
+  backdrop-filter: blur(var(--de-glass-blur)) saturate(150%);
+}
+
+/* ---- Buttons ---------------------------------------------------------- */
+.de-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--de-space-2);
+  min-height: var(--de-tap);
+  padding: 0 var(--de-space-5);
+  border: 1px solid transparent;
+  border-radius: var(--de-radius-pill);
+  background: var(--de-accent);
+  color: var(--de-on-accent);
+  font-family: var(--de-font-display);
+  font-size: var(--de-text-md);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--de-duration-fast) var(--de-ease),
+    transform var(--de-duration-fast) var(--de-ease),
+    border-color var(--de-duration-fast) var(--de-ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.de-btn:hover {
+  background: var(--de-accent-hover);
+}
+.de-btn:active {
+  transform: scale(0.97);
+}
+.de-btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+.de-btn ion-icon {
+  font-size: 1.3em;
+  flex-shrink: 0;
+}
+.de-btn--block {
+  display: flex;
+  width: 100%;
+}
+.de-btn--large {
+  min-height: 60px;
+  font-size: var(--de-text-lg);
+}
+.de-btn--small {
+  min-height: 44px;
+  padding: 0 var(--de-space-4);
+  font-size: var(--de-text-sm);
+}
+.de-btn--ghost {
+  background: transparent;
+  border-color: var(--de-border-strong);
+  color: var(--de-text);
+}
+.de-btn--ghost:hover {
+  background: var(--de-surface-raised);
+}
+.de-btn--danger {
+  background: transparent;
+  border-color: var(--de-danger);
+  color: var(--de-danger);
+}
+.de-btn--danger:hover {
+  background: var(--de-danger-soft);
+}
+.de-btn--whatsapp {
+  background: #1faa59;
+  color: #04170c;
+}
+.de-btn--whatsapp:hover {
+  background: #2bc56b;
+}
+
+/* Round icon button (map controls, settings). */
+.de-icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: var(--de-tap);
+  height: var(--de-tap);
+  padding: 0;
+  border-radius: var(--de-radius-pill);
+  color: var(--de-text);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* ---- Form fields ------------------------------------------------------ */
+.de-field {
+  display: grid;
+  gap: var(--de-space-2);
+}
+.de-label {
+  font-size: var(--de-text-sm);
+  font-weight: 700;
+  color: var(--de-text-muted);
+  letter-spacing: 0.01em;
+}
+.de-input {
+  width: 100%;
+  min-height: var(--de-tap);
+  padding: 0 var(--de-space-4);
+  border: 1px solid var(--de-border-strong);
+  border-radius: var(--de-radius-md);
+  background: var(--de-surface);
+  font-size: var(--de-text-md);
+}
+.de-input::placeholder {
+  color: var(--de-text-muted);
+  opacity: 0.8;
+}
+.de-input:focus-visible {
+  border-color: var(--de-accent);
+}
+
+/* Segmented control (radio group). */
+.de-segment {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: var(--de-space-1);
+  padding: var(--de-space-1);
+  border: 1px solid var(--de-border);
+  border-radius: var(--de-radius-pill);
+  background: var(--de-surface);
+}
+.de-segment__option {
+  position: relative;
+}
+.de-segment__option input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.de-segment__option span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--de-space-2);
+  min-height: 44px;
+  padding: 0 var(--de-space-3);
+  border-radius: var(--de-radius-pill);
+  font-size: var(--de-text-sm);
+  font-weight: 700;
+  color: var(--de-text-muted);
+  text-align: center;
+  transition:
+    background var(--de-duration-fast) var(--de-ease),
+    color var(--de-duration-fast) var(--de-ease);
+}
+.de-segment__option input:checked + span {
+  background: var(--de-accent);
+  color: var(--de-on-accent);
+}
+.de-segment__option input:focus-visible + span {
+  box-shadow: var(--de-focus-ring);
+}
+
+/* Range slider. */
+.de-range {
+  width: 100%;
+  height: var(--de-tap);
+  margin: 0;
+  background: transparent;
+  accent-color: var(--de-accent);
+  cursor: pointer;
+}
+
+/* ---- Notices (inline info / warnings) --------------------------------- */
+.de-notice {
+  display: flex;
+  gap: var(--de-space-3);
+  align-items: flex-start;
+  padding: var(--de-space-3) var(--de-space-4);
+  border-radius: var(--de-radius-md);
+  background: var(--de-surface-raised);
+  font-size: var(--de-text-sm);
+  line-height: 1.45;
+}
+.de-notice ion-icon {
+  flex-shrink: 0;
+  margin-top: 0.1em;
+  font-size: 1.35rem;
+  color: var(--de-text-muted);
+}
+.de-notice--warn {
+  background: var(--de-warn-soft);
+}
+.de-notice--warn ion-icon {
+  color: var(--de-warn);
+}
+.de-notice--danger {
+  background: var(--de-danger-soft);
+}
+.de-notice--danger ion-icon {
+  color: var(--de-danger);
+}
+.de-notice--go ion-icon {
+  color: var(--de-go);
+}
+.de-notice strong {
+  display: block;
+  color: var(--de-text);
+}
+
+/* ---- Motion preferences ------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

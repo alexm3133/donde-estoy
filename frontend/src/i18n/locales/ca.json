@@ -1,0 +1,161 @@
+{
+  "status": {
+    "waiting": "Esperant",
+    "moving": "En moviment",
+    "stopped": "Aturat",
+    "no_signal": "Sense senyal",
+    "finished": "Ha arribat",
+    "ended": "Finalitzat"
+  },
+  "hero": {
+    "other": {
+      "arrivesIn": "{{name}} arriba en",
+      "waiting": "Esperant {{name}}",
+      "waitingDetail": "Encara no ha sortit. Aquesta pàgina s'actualitza sola: no cal tocar res.",
+      "stoppedDetail": "Fa {{minutes}} min que està aturat. Si surt ara, arriba cap a les {{time}}.",
+      "arrived": "{{name}} ha arribat!",
+      "ended": "{{name}} ha deixat de compartir"
+    },
+    "own": {
+      "arrivesIn": "Arribes en",
+      "waiting": "Buscant la teva posició…",
+      "waitingDetail": "Surt a cel obert perquè el GPS et trobi.",
+      "stoppedDetail": "Fa {{minutes}} min que estàs aturat. Si surts ara, arribes cap a les {{time}}.",
+      "arrived": "Has arribat!",
+      "ended": "Has deixat de compartir"
+    },
+    "around": "cap a les {{time}}",
+    "noSignalDetail": "Sense senyal del seu mòbil (última posició {{ago}}). Hora calculada amb l'últim que sabem.",
+    "imminent": "Arribant",
+    "spokenMinutes": "{{minutes}} minuts",
+    "spokenHours": "{{hours}} h {{minutes}} min",
+    "lowConfidence": "Primera estimació: s'afina a mesura que avança.",
+    "arrivedAt": "Arribada a les {{time}}.",
+    "endedDetail": "La seva ubicació ja no es desa ni es mostra."
+  },
+  "stats": {
+    "distanceLeft": "Falten",
+    "distanceLeftApprox": "Falten (aprox.)",
+    "ascentLeft": "Pujada",
+    "descentLeft": "Baixada"
+  },
+  "profile": {
+    "label": "Perfil d'elevació de la ruta"
+  },
+  "map": {
+    "label": "Mapa topogràfic amb la posició en directe",
+    "recenter": "Torna a centrar el mapa",
+    "pickerLabel": "Mapa per triar la destinació"
+  },
+  "alerts": {
+    "arrivingSoon": {
+      "title": "{{name}} està arribant",
+      "body": "Arriba en uns {{minutes}} min, cap a les {{time}}."
+    },
+    "arrived": {
+      "title": "{{name}} ha arribat!",
+      "body": "Ha arribat a la seva destinació a les {{time}}."
+    },
+    "stalledStopped": {
+      "title": "Fa {{minutes}} min que {{name}} no es mou",
+      "body": "La seva última posició és al mapa. Pot ser una parada llarga: prova de trucar-li."
+    },
+    "stalledNoSignal": {
+      "title": "Sense notícies de {{name}} des de fa {{minutes}} min",
+      "body": "El seu mòbil no envia la posició. A muntanya sol ser falta de cobertura. L'última posició coneguda és al mapa."
+    }
+  },
+  "viewer": {
+    "loading": "Carregant…",
+    "lastUpdate": "Última posició: {{ago}}",
+    "reconnecting": "Reconnectant…",
+    "offRoute": "És fora de la ruta prevista; l'hora d'arribada pot variar.",
+    "notFoundTitle": "Aquest enllaç ja no funciona",
+    "notFoundBody": "Pot ser que hagi caducat o que estigui mal copiat. Demana a qui te l'ha enviat que en comparteixi un de nou.",
+    "errorTitle": "No podem connectar",
+    "errorBody": "Comprova la connexió. Ho continuem intentant…",
+    "goHome": "Compartir la meva ruta",
+    "notifyEnable": "Avisa'm",
+    "notifyOn": "Avisos activats"
+  },
+  "home": {
+    "title": "Que sàpiguen quan arribes.",
+    "subtitle": "Comparteix la teva sortida per la muntanya amb un enllaç. Qui t'espera veu on ets i una hora d'arribada que té en compte el desnivell, no només la distància.",
+    "name": "El teu nom",
+    "namePlaceholder": "Com et veuran: Àlex",
+    "activity": "Activitat",
+    "run": "Córrer",
+    "hike": "Caminar",
+    "destination": "On vas?",
+    "destGpx": "Ruta GPX",
+    "destPoint": "Punt al mapa",
+    "gpxChoose": "Tria un fitxer GPX",
+    "gpxChange": "Canvia la ruta",
+    "gpxHint": "Amb una ruta GPX l'hora d'arribada és molt més precisa: sabem quanta pujada i baixada et queda.",
+    "gpxParsing": "Llegint la ruta…",
+    "routeSummary": "{{distance}} · {{ascent}} de pujada · {{descent}} de baixada",
+    "routeNoElevation": "{{distance}} · aquest GPX no porta altituds, l'hora serà menys precisa",
+    "pointHint": "Toca el mapa per marcar la destinació.",
+    "pointSet": "Destinació marcada. Toca un altre punt per canviar-la.",
+    "locateMe": "Centra a la meva posició",
+    "stall": "Avís de seguretat",
+    "stallValue": "Avisa qui em segueix si fa {{minutes}} min que no em moc",
+    "start": "Comença a compartir",
+    "starting": "Creant l'enllaç…",
+    "demo": "Veure una demo",
+    "demoHint": "Simula una baixada del Pedraforca a Gósol per provar-ho sense moure't.",
+    "privacy": "Sense comptes. Enllaç secret que caduca sol. Pots deixar de compartir quan vulguis i la teva ubicació s'esborra.",
+    "openSource": "Codi obert (MIT)",
+    "errors": {
+      "nameRequired": "Escriu el teu nom.",
+      "destinationRequired": "Tria una ruta GPX o marca una destinació al mapa.",
+      "gpx_invalid": "Aquest fitxer no sembla un GPX vàlid.",
+      "gpx_no_points": "El GPX no conté cap ruta.",
+      "gpx_too_large": "El fitxer és massa gran (màxim 5 MB).",
+      "route_too_short": "La ruta és massa curta.",
+      "too_many_sessions": "Has creat massa sessions. Espera una estona.",
+      "location": "No hem pogut obtenir la teva posició.",
+      "generic": "Alguna cosa ha fallat. Comprova la connexió i torna-ho a provar."
+    }
+  },
+  "run": {
+    "live": "Compartint en directe",
+    "shareTitle": "Envia aquest enllaç a qui t'espera",
+    "shareWhatsapp": "Envia per WhatsApp",
+    "share": "Comparteix",
+    "copy": "Copia l'enllaç",
+    "copied": "Enllaç copiat",
+    "shareText": "Segueix la meva ruta en directe i mira a quina hora arribo:",
+    "screenTitle": "Mantén la pantalla encesa",
+    "screenBody": "Deixa aquesta pàgina oberta i a la vista. Si bloqueges el mòbil o canvies d'app, el navegador deixa d'enviar la teva posició.",
+    "screenLocked": "Mantenim la pantalla encesa per tu mentre aquesta pàgina estigui oberta.",
+    "screenUnsupported": "Aquest navegador no pot mantenir la pantalla encesa: desactiva el bloqueig automàtic als ajustos del mòbil.",
+    "bufferTitle": "Sense cobertura",
+    "bufferBody": "{{count}} posicions desades al mòbil. S'enviaran soles quan recuperis senyal.",
+    "gpsStarting": "Buscant senyal GPS…",
+    "gpsOk": "GPS actiu",
+    "gpsDeniedTitle": "No tenim permís d'ubicació",
+    "gpsDeniedBody": "Permet l'accés a la ubicació per a aquesta pàgina als ajustos del navegador i recarrega.",
+    "gpsUnavailableTitle": "No trobem senyal GPS",
+    "gpsUnavailableBody": "Surt a cel obert. Ho continuem intentant.",
+    "gpsUnsupportedTitle": "Aquest navegador no té GPS",
+    "gpsUnsupportedBody": "Obre la pàgina en un mòbil amb ubicació.",
+    "demoNotice": "Mode demo: la posició és simulada i va accelerada.",
+    "finish": "Ja he arribat",
+    "stop": "Deixa de compartir",
+    "stopConfirmTitle": "Vols deixar de compartir?",
+    "stopConfirmBody": "L'enllaç deixarà de mostrar la teva posició i esborrarem la teva ubicació ara mateix.",
+    "stopConfirmYes": "Deixa de compartir",
+    "cancel": "Cancel·la",
+    "finishedBody": "L'enllaç continuarà mostrant que has arribat durant una hora i després s'esborra tot.",
+    "newSession": "Nova sortida",
+    "sessionGone": "La sessió ha caducat."
+  },
+  "settings": {
+    "open": "Idioma i aparença",
+    "language": "Idioma",
+    "theme": "Aparença",
+    "dark": "Fosc",
+    "light": "Clar"
+  }
+}

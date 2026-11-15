@@ -1,0 +1,125 @@
+/*
+ * Design tokens — the single source of truth for colour, type, spacing,
+ * radius, elevation and motion. Components only ever use these variables.
+ *
+ * Palette: deep night blue + stone greys, with a sunset-orange accent.
+ * Dark is the default; `data-theme="light"` on <html> switches.
+ * Every text/background pair below meets WCAG AA (4.5:1) or better.
+ */
+
+:root {
+  /* ---- Raw palette --------------------------------------------------- */
+  --de-night-950: #060b16;
+  --de-night-900: #0a1220;
+  --de-night-800: #101b30;
+  --de-night-700: #182742;
+  --de-night-600: #24375a;
+  --de-stone-50: #f6f3ee;
+  --de-stone-100: #ebe7df;
+  --de-stone-200: #d9d4c9;
+  --de-stone-400: #a39f96;
+  --de-stone-600: #5f6068;
+  --de-sunset-300: #ffb088;
+  --de-sunset-400: #ff9259;
+  --de-sunset-500: #ff7a3d;
+  --de-sunset-700: #b93c0a;
+  --de-trail-400: #5ee0a0;
+  --de-trail-700: #0b7a47;
+
+  /* ---- Semantic colours (dark theme) --------------------------------- */
+  --de-bg: var(--de-night-900);
+  --de-surface: var(--de-night-800);
+  --de-surface-raised: var(--de-night-700);
+  --de-border: rgb(170 190 225 / 0.16);
+  --de-border-strong: rgb(170 190 225 / 0.34);
+  --de-text: #f4f1eb;
+  --de-text-muted: #aab6ca;
+  /* Accent as a fill (buttons, route line) and as text on the background. */
+  --de-accent: var(--de-sunset-500);
+  --de-accent-hover: var(--de-sunset-400);
+  --de-on-accent: #1d0d03;
+  --de-accent-text: var(--de-sunset-400);
+  --de-accent-soft: rgb(255 122 61 / 0.14);
+  /* Status colours. */
+  --de-go: var(--de-trail-400);
+  --de-go-soft: rgb(94 224 160 / 0.14);
+  --de-warn: #ffc24d;
+  --de-warn-soft: rgb(255 194 77 / 0.14);
+  --de-danger: #ff7b72;
+  --de-danger-soft: rgb(255 123 114 / 0.16);
+  --de-danger-fill: #d93a30;
+  --de-on-danger: #ffffff;
+  /* Glass cards floating over the map. */
+  --de-glass: rgb(10 18 32 / 0.76);
+  --de-glass-border: rgb(190 210 245 / 0.14);
+  --de-glass-blur: 22px;
+  /* Map furniture. */
+  --de-route: var(--de-sunset-500);
+  --de-route-done: #7d8aa3;
+  --de-route-casing: var(--de-night-950);
+  --de-track: var(--de-trail-400);
+
+  /* ---- Typography ----------------------------------------------------- */
+  --de-font-display: "Bricolage Grotesque Variable", "Bricolage Grotesque", system-ui, sans-serif;
+  --de-font-body: "Manrope Variable", "Manrope", system-ui, -apple-system, sans-serif;
+  --de-text-xs: 0.8125rem; /* 13px — smallest size used anywhere */
+  --de-text-sm: 0.9375rem;
+  --de-text-md: 1.0625rem; /* body: 17px, comfortable for older eyes */
+  --de-text-lg: 1.25rem;
+  --de-text-xl: 1.625rem;
+  --de-text-2xl: clamp(2rem, 7vw, 2.75rem);
+  /* The ETA: the largest thing on screen. */
+  --de-text-hero: clamp(4.25rem, 22vw, 7rem);
+  --de-text-hero-compact: clamp(3rem, 15vw, 4.5rem);
+  --de-leading-tight: 1.1;
+  --de-leading-body: 1.5;
+
+  /* ---- Spacing (4px grid) --------------------------------------------- */
+  --de-space-1: 0.25rem;
+  --de-space-2: 0.5rem;
+  --de-space-3: 0.75rem;
+  --de-space-4: 1rem;
+  --de-space-5: 1.5rem;
+  --de-space-6: 2rem;
+  --de-space-7: 3rem;
+
+  /* ---- Shape, depth, motion ------------------------------------------- */
+  --de-radius-sm: 10px;
+  --de-radius-md: 16px;
+  --de-radius-lg: 26px;
+  --de-radius-pill: 999px;
+  --de-shadow-card: 0 18px 50px rgb(0 0 0 / 0.45), 0 2px 8px rgb(0 0 0 / 0.3);
+  --de-shadow-marker: 0 4px 14px rgb(0 0 0 / 0.5);
+  --de-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --de-duration-fast: 160ms;
+  --de-duration: 320ms;
+  /* Minimum tap target (WCAG 2.5.8 asks 24px; we go well beyond). */
+  --de-tap: 52px;
+  --de-focus-ring: 0 0 0 3px var(--de-bg), 0 0 0 6px var(--de-sunset-300);
+}
+
+:root[data-theme="light"] {
+  --de-bg: var(--de-stone-50);
+  --de-surface: #ffffff;
+  --de-surface-raised: var(--de-stone-100);
+  --de-border: rgb(16 27 48 / 0.14);
+  --de-border-strong: rgb(16 27 48 / 0.4);
+  --de-text: #0e1830;
+  --de-text-muted: #4b576d;
+  --de-accent-text: var(--de-sunset-700);
+  --de-accent-soft: rgb(255 122 61 / 0.16);
+  --de-go: var(--de-trail-700);
+  --de-go-soft: rgb(11 122 71 / 0.12);
+  --de-warn: #8a5a00;
+  --de-warn-soft: rgb(255 194 77 / 0.3);
+  --de-danger: #b3261e;
+  --de-danger-soft: rgb(179 38 30 / 0.1);
+  --de-glass: rgb(255 255 255 / 0.82);
+  --de-glass-border: rgb(16 27 48 / 0.12);
+  --de-route-done: #6f7787;
+  --de-route-casing: #ffffff;
+  --de-track: var(--de-trail-700);
+  --de-shadow-card: 0 18px 50px rgb(16 27 48 / 0.18), 0 2px 8px rgb(16 27 48 / 0.1);
+  --de-shadow-marker: 0 4px 14px rgb(16 27 48 / 0.35);
+  --de-focus-ring: 0 0 0 3px var(--de-bg), 0 0 0 6px var(--de-sunset-700);
+}
