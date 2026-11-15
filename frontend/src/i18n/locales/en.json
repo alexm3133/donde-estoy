@@ -28,7 +28,7 @@
     "noSignalDetail": "No signal from their phone (last position {{ago}}). Time based on the last we know.",
     "imminent": "Arriving",
     "spokenMinutes": "{{minutes}} minutes",
-    "spokenHours": "{{hours}} hours and {{minutes}} minutes",
+    "spokenHours": "{{hours}} h {{minutes}} min",
     "lowConfidence": "First estimate — it sharpens as they go.",
     "arrivedAt": "Arrived at {{time}}.",
     "endedDetail": "Their location is no longer stored or shown."

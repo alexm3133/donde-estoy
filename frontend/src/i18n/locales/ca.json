@@ -28,7 +28,7 @@
     "noSignalDetail": "Sense senyal del seu mòbil (última posició {{ago}}). Hora calculada amb l'últim que sabem.",
     "imminent": "Arribant",
     "spokenMinutes": "{{minutes}} minuts",
-    "spokenHours": "{{hours}} hores i {{minutes}} minuts",
+    "spokenHours": "{{hours}} h {{minutes}} min",
     "lowConfidence": "Primera estimació: s'afina a mesura que avança.",
     "arrivedAt": "Arribada a les {{time}}.",
     "endedDetail": "La seva ubicació ja no es desa ni es mostra."

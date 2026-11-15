@@ -42,7 +42,10 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
-ignore = ["B008"]  # FastAPI's Depends() in defaults is idiomatic
+ignore = [
+    "B008",  # FastAPI's Depends() in defaults is idiomatic
+    "E501",  # line length is the formatter's job
+]
 
 [tool.ruff.lint.isort]
 # The local ./alembic folder (migrations) must not shadow the library.

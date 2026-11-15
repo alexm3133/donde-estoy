@@ -28,7 +28,7 @@
     "noSignalDetail": "Sin señal de su móvil (última posición {{ago}}). Hora calculada con lo último que sabemos.",
     "imminent": "Llegando",
     "spokenMinutes": "{{minutes}} minutos",
-    "spokenHours": "{{hours}} horas y {{minutes}} minutos",
+    "spokenHours": "{{hours}} h {{minutes}} min",
     "lowConfidence": "Primera estimación: se afina a medida que avanza.",
     "arrivedAt": "Llegada a las {{time}}.",
     "endedDetail": "Su ubicación ya no se guarda ni se muestra."
