@@ -1,0 +1,37 @@
+.de-stats {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: var(--de-space-2);
+  margin: 0;
+}
+.de-stats__item {
+  padding: var(--de-space-2) var(--de-space-3);
+  border-radius: var(--de-radius-md);
+  background: var(--de-surface-raised);
+  min-width: 0;
+}
+.de-stats dt {
+  display: flex;
+  align-items: center;
+  gap: var(--de-space-1);
+  font-size: var(--de-text-xs);
+  font-weight: 700;
+  color: var(--de-text-muted);
+  line-height: 1.2;
+}
+.de-stats dt ion-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+  color: var(--de-accent-text);
+}
+.de-stats dd {
+  margin: var(--de-space-1) 0 0;
+  font-family: var(--de-font-display);
+  font-size: var(--de-text-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}

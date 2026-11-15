@@ -1,0 +1,32 @@
+.de-settings {
+  position: relative;
+}
+.de-settings__panel {
+  position: absolute;
+  top: calc(100% + var(--de-space-2));
+  right: 0;
+  z-index: 20;
+  display: grid;
+  gap: var(--de-space-4);
+  width: min(340px, calc(100vw - 2 * var(--de-space-4)));
+  padding: var(--de-space-4);
+  border-radius: var(--de-radius-md);
+  animation: de-pop var(--de-duration-fast) var(--de-ease);
+}
+.de-settings__group {
+  display: grid;
+  gap: var(--de-space-2);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.de-settings__group legend {
+  padding: 0;
+  margin-bottom: var(--de-space-2);
+}
+@keyframes de-pop {
+  from {
+    transform: translateY(-6px) scale(0.98);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,41 @@
+.de-alert {
+  display: flex;
+  gap: var(--de-space-3);
+  align-items: flex-start;
+  padding: var(--de-space-4);
+  border-radius: var(--de-radius-md);
+  background: var(--de-accent);
+  color: var(--de-on-accent);
+  box-shadow: var(--de-shadow-card);
+  animation: de-alert-in var(--de-duration) var(--de-ease);
+}
+.de-alert[data-kind="stalled"] {
+  background: var(--de-danger-fill);
+  color: var(--de-on-danger);
+}
+.de-alert[data-kind="arrived"] {
+  background: var(--de-trail-400);
+  color: #04170c;
+}
+.de-alert ion-icon {
+  flex-shrink: 0;
+  font-size: 1.9rem;
+}
+.de-alert strong {
+  display: block;
+  font-family: var(--de-font-display);
+  font-size: var(--de-text-lg);
+  line-height: 1.2;
+}
+.de-alert p {
+  margin-top: var(--de-space-1);
+  font-size: var(--de-text-sm);
+  font-weight: 600;
+  line-height: 1.4;
+}
+@keyframes de-alert-in {
+  from {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+}

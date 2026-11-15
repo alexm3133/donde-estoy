@@ -1,0 +1,84 @@
+.de-hero {
+  display: grid;
+  gap: var(--de-space-1);
+}
+.de-hero__label {
+  font-size: var(--de-text-lg);
+  font-weight: 700;
+  color: var(--de-text-muted);
+}
+.de-hero__value {
+  display: flex;
+  align-items: baseline;
+  gap: 0.12em;
+  font-family: var(--de-font-display);
+  font-size: var(--de-text-hero);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  color: var(--de-text);
+  font-variant-numeric: tabular-nums;
+}
+.de-hero--compact .de-hero__value {
+  font-size: var(--de-text-hero-compact);
+}
+.de-hero--compact .de-hero__label {
+  font-size: var(--de-text-md);
+}
+.de-hero__digits {
+  display: inline-block;
+}
+.de-hero__digits--tick {
+  animation: de-tick var(--de-duration) var(--de-ease);
+}
+.de-hero__unit {
+  margin-right: 0.3em;
+  font-size: 0.34em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--de-accent-text);
+}
+.de-hero__unit:last-child {
+  margin-right: 0;
+}
+.de-hero__word {
+  font-size: 0.5em;
+  letter-spacing: -0.03em;
+  color: var(--de-accent-text);
+}
+.de-hero__sub {
+  font-size: var(--de-text-lg);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--de-text);
+}
+.de-hero__hint {
+  font-size: var(--de-text-xs);
+  color: var(--de-text-muted);
+}
+.de-hero__headline {
+  font-size: var(--de-text-2xl);
+  font-weight: 800;
+}
+.de-hero__headline--big {
+  font-size: clamp(2.5rem, 11vw, 3.75rem);
+}
+.de-hero--arrived .de-hero__headline {
+  color: var(--de-go);
+}
+.de-hero__headline + .de-hero__sub {
+  margin-top: var(--de-space-2);
+  font-weight: 500;
+  color: var(--de-text-muted);
+}
+
+@keyframes de-tick {
+  from {
+    transform: translateY(0.18em);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
