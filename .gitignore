@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+*.db
+
+# Node
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Capacitor native projects (generated with `npx cap add`)
+frontend/android/
+frontend/ios/
+
+# Environment / editors / OS
+.env
+.env.local
+.idea/
+.vscode/
+.DS_Store
